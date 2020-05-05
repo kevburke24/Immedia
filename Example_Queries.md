@@ -2,108 +2,108 @@ __Immedia Queries__
 
 1. What are the original documentaries from Immedia?
 
-**Select title
+**Select title**
 
-From Original
+**From Original**
 
-Where genre = ‘Documentary’;**
+**Where genre = ‘Documentary’;**
 
 2. ​ What awards have original productions won and from what organizations? Select title, category, organization
 
-**From Original o, Award a
+**From Original o, Award a**
 
-Where o.EntId = a. EntId;**
+**Where o.EntId = a. EntId;**
 
 3. ​List the leased entertainment that cost more than the average leased and is a Drama, and display how much greater than the average they are
 
-​**Select title, lease_cost - (Select avg(lease_cost) From Leased) as no_above_avg From Leased
+​**Select title, lease_cost - (Select avg(lease_cost) From Leased) as no_above_avg From Leased**
 
-Where genre LIKE ‘%Drama%’
+**Where genre LIKE ‘%Drama%’**
 
-And lease_cost >
+**And lease_cost >**
 
-(Select avg(lease_cost)
+**(Select avg(lease_cost)**
 
-From Leased);**
+**From Leased);**
 
 4. ​What is the total production cost of each genre of originals, ordered by cost? ​
 
-**Select genre, Sum(production_cost)
+**Select genre, Sum(production_cost)**
 
-From Original
+**From Original**
 
-Group by genre
+**Group by genre**
 
-Order by cost;**
+**Order by cost;**
 
 5. ​What streaming console are people born in the 90s using? (1 warning?) ​
 
-**Select streaming_console
+**Select streaming_console**
 
-From Customer
+**From Customer**
 
-Where birthdate in
+**Where birthdate in**
 
-(Select birthdate
+**(Select birthdate**
 
-From Customer
+**From Customer**
 
-Where birthdate Like ‘199%’);**
+**Where birthdate Like ‘199%’);**
 
 6. ​List the Leased and Original entertainment with the same genre along with any unmatched leased Entertainment
 
-**Select l.title, l.genre, o.title, o.genre From Leased l Left Join Original o
+**Select l.title, l.genre, o.title, o.genre From Leased l Left Join Original o**
 
-On l.genre = o.genre;**
+**On l.genre = o.genre;**
 
 7. ​Find pairs of users who live in the same state ​
 
-**Select c1.username, c2.username
+**Select c1.username, c2.username**
 
-From Customer c1, Customer c2
+**From Customer c1, Customer c2**
 
-Where c1.state =c2.state
+**Where c1.state =c2.state**
 
-And c1.custid <c2.custid;**
+**And c1.custid <c2.custid;**
 
 8. ​What Originals were Denzel Washington in and when did the come out? ​Select title, release_date
 
-**From Original o, Main_Actors m
+**From Original o, Main_Actors m**
 
-Where o.EntID = m.EntID
+**Where o.EntID = m.EntID**
 
-And actors = ‘Denzel Washington’ ;**
+**And actors = ‘Denzel Washington’ ;**
 
 9. ​What are the CustIds of customers with more than 1 profile
 
-**Select CustID
+**Select CustID**
 
-From Customer
+**From Customer**
 
-Where no_of_profiles > 1;**
+**Where no_of_profiles > 1;**
 
 10. ​List all Originals that’s production cost is less than the average production cost ​
 
-**Select title
+**Select title**
 
-From Original
+**From Original**
 
-Where production_cost <
+**Where production_cost <**
 
-(Select avg(production_cost) From Original);**
+**(Select avg(production_cost) From Original);**
 
 11. ​The New York Times moved their office and changed their business phone number. Alter the phone number in the database.
 
-**Update Publisher_phone
+**Update Publisher_phone**
 
-Set Phone_no = 6178964947
+**Set Phone_no = 6178964947**
 
-Where Publisher = ‘The New York Times’;**
+**Where Publisher = ‘The New York Times’;**
 
 12. ​Get all press release titles for Action entertainment.
 
-**Select m.Media_title
+**Select m.Media_title**
 
-From Original as o, Media_mentioned_in as m
+**From Original as o, Media_mentioned_in as m**
 
-Where o.EntID = m.EntID and o.Genre = ‘Action’;**
+**Where o.EntID = m.EntID and o.Genre = ‘Action’;**
