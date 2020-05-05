@@ -1,7 +1,9 @@
 **Immedia Design Portfolio**
 
 Immedia is a media-services provider that offers subscription-based streaming of a library of series and films, some of which are developed by Immedia’s in-house studio, Immedia Productions, Inc.
+
 Features of Immedia include...
+
 1. Multiple ​subscription ​options, including basic, standard, and premium.
   * Basic - includes ads ($7.99/month)
     * Can watch on tv and any portable device
@@ -49,3 +51,68 @@ Features of Immedia include...
 **Entity Relationship Diagram of Immedia Database**
 
 ![Entity Relationship Model](imgs/Immedia_ERM.png)
+
+**Functional Dependencies and Accompanying Descriptions**
+
+1. CustID → username, password, streaming console, # of profiles, country, state, city, street, street #, birthdate, payment card #, email, sex
+
+“Each paying customer has a unique customer ID and username”
+
+2. CustID, Payment # → Payment Date
+
+“each payment has a unique payment #, which associated with a particular customer’s payment on a particular date”
+
+CustID →  Screen_limit, Hd_avail?, Ads?
+
+3. CustID → Screen_limit, Hd_avail?, Ads?, Cable_provider_name
+
+“Each paying customer has a unique customer ID…” [1 paying customer per subscription]
+
+7. Cable provider name → phone, country, state, city, street, street #
+
+“Cable providers have a unique name”
+
+8. Production company name → name, studio country, state, city, street, street #
+
+“Production company has… unique name”
+
+9. Entertainment ID → Kids/Adult show/movie, entertainment release date, title, genre, cost of production, director
+
+“The streaming service offers... original… movies, series, and mini series (Entertainment), each of which has a unique entertainment id...”
+
+10. Entertainment ID → Kids/Adult show/movie, entertainment release date, title, genre, lease length, cost of lease
+“The streaming service offers… leased out movies, series, and mini series (Entertainment), each of which has a unique entertainment id...”
+
+11. Publisher, media title → date published
+
+“Each press release has a unique publisher and release title combination...”
+
+12. Advertising company name → media type, company country, state, city, street, and street #
+“Each advertising agency has its own unique name…”
+
+13. Sponsor name → contribution amount, contribution tier, country, state, city, street, street #
+“Sponsors have a unique company name...”
+
+14. Entertainment genre → Kids/Adult
+
+“The streaming service offers entertainment… which has...kid/adult status, which can be determined from genre…”
+
+15. Customer username → username, password, streaming console, # of profiles, country, state, city, street, street #, birthdate, payment card #, email, sex
+
+“Each paying customer has a unique customer ID and username”
+
+17. Director, release date → Entertainment ID
+
+“Immedia has a rule that a director on the payroll can direct only one Immedia film or series episode per year.”
+
+18. Username → custID
+
+“Each customer has a unique custID and username that identifies them”
+
+19. Production Company Email → Production Company Name
+
+“Production company has.. email, whose tag identifies the production company name”
+
+20. Publisher → publisher country, state, city, street, and street #, date published
+
+“Each press release has a unique publisher and release title combination...”
