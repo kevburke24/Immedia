@@ -116,3 +116,49 @@ CustID →  Screen_limit, Hd_avail?, Ads?
 20. Publisher → publisher country, state, city, street, and street #, date published
 
 “Each press release has a unique publisher and release title combination...”
+
+**3NF Schemas**
+
+GENRE(​Genre​, Kids/Adult)
+
+SUBSCRIPTIONS​ (​CustID​, HD Avail?, Screen Limit, Ads?, ​Cable Provider Name​) CUSTOMER​ (​CustID, ​Username, # of profiles, Email, Streaming Console, Sex, Birthdate, Password, Payment Card #)
+
+PAYMENT ​(​Payment #, ​CustID,​ ​ Payment Date)
+
+ADVERTISING_COMPANY​ (​Advertising Agency Name​, Medium, State, City, Street, Street # Business Phone)
+
+CUSTOMER​(​CustID​, username, password, streaming console, # of profiles, country, state, city, street, street #, birthdate, payment card #, email, sex )
+
+CABLE PROVIDER​(​Cable Provider Name, ​Subscriber type, phone, country, state, city, street, street #)
+
+CABLE_PROVIDER_PHONE​ (​Phone num,​ Cable Provider Name)​
+
+PRODUCTION COMPANY​(​Production company name,​, country, state, city, street, street #)
+
+ENTERTAINMENT​(​Entertainment ID​, entertainment release date, title, genre, cost of production, director, lease length, cost of lease)
+
+PRESS RELEASE​(​Publisher, media title, ​date published)
+
+PUBLISHER​(Publisher​, publisher country, state, city, street, and street #)
+
+PUBLISHER_PHONE​(​Publisher, phone​)
+
+PRODUCTION_COMPANY​(​Name​, City, Street, Street #, Country, State, Email)
+
+ADVERTISING(​Advertising company name, ​media type, company country, state, city, street, and street #)
+
+SPONSOR​ (​Sponsor name, ​contribution amount, contribution tier, country, state, city, street, street #)
+
+SPONSOR_NUMBER​ (​Phone num, ​Spon Name)​ SPONSOR_SPONSORS_BASIC​(​Sponsor Name, CustID) AWARD​ (​Organization, Category, Date Received, ​Ent.ID)​ PRODUCERS​ (​Producers, ​Ent.ID)​
+
+MAIN_ACTORS ​(​Actors, ​Ent. ID​)
+
+ORIGINAL​(Ent ID,​ Director, Cost of Production)
+
+LEASED​(​Ent ID​, Cost of Lease, Lease Length, ​Production Company Name​)
+
+MEDIA_MENTIONED_IN​(​Ent ID, Publisher, Media Title​)
+            
+SUBSCRIPTION​(​CustID, ​Screen limit, HD available?, ads?)
+
+SUBSCRIBER-CABLE​(​CustID​, Cable_provider_name)
